@@ -11,5 +11,13 @@ class PostManager extends Manager
     return $req;
   }
 
+  public function getPost(int $id)
+  {
+    $db = $this-> dbConnect();
+    $req = $db->prepare('SELECT id, artist, title, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts WHERE id = ?');
+    $req->execute([$id]);
+    $post = $req->fetch();
 
+    return $post;
+  }
 }
