@@ -8,3 +8,9 @@ function listPosts()
     $posts = $postManager->getPosts();
     require('view/frontend/listPostsView.php');
 }
+function post()
+{
+    $postManager = new PostManager();
+    $post = $postManager->getPost($_GET['id']);
+    require('view/frontend/postView.php');
+}
