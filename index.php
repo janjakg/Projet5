@@ -11,9 +11,18 @@ try
               listPosts();
               break; 
 
-              default:
-              echo 'Pas d\'action';
-              break;            
+            case 'post':
+              if (isset($_GET['id']) && $_GET['id'] > 0) {
+                  post();
+              } else {
+                  echo 'Erreur : aucun identifiant de billet envoyé';
+              }
+              break;   
+
+            default:
+            echo 'Pas d\'action';
+            break; 
+                         
       }
   } else {
     listPosts();
