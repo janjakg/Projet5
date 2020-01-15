@@ -1,5 +1,6 @@
 <?php
-
+//namespace Structure;
+//require 'vendor/autoload.php';
 require('controller/frontend.php');
 
 try
@@ -24,7 +25,7 @@ try
             break; 
                          
       }
-  } else {
+  } else {  
     listPosts();
   }
 }
