@@ -19,7 +19,7 @@ $title = "Decouvertes";
     <h3>
       <em><?= strip_tags(stripslashes($data['artist'])) ?></em>     
     </h3>
-    <p><?= nl2br(strip_tags(stripslashes(substr($data['title'],0,200)))) ?>...</p>
+    <p>"<?= nl2br(strip_tags(stripslashes(substr($data['title'],0,200)))) ?>"</p>
     <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">voir plus</a>
     <p>envoyé le <?= nl2br(strip_tags(stripslashes($data['creation_date_fr']))) ?></p>
   </div>
