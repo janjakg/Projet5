@@ -21,8 +21,8 @@ class ComposerStaticInitcb4da7b17582a4c25a3bea865a0d6b79
     );
 
     public static $classMap = array (
-        'Structure\\Model\\Manager' => __DIR__ . '/../..' . '/model/Manager.php',
-        'Structure\\Model\\PostManager' => __DIR__ . '/../..' . '/model/postManager.php',
+        'Structure\\Manager' => __DIR__ . '/../..' . '/model/Manager.php',
+        'Structure\\PostManager' => __DIR__ . '/../..' . '/model/postManager.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
