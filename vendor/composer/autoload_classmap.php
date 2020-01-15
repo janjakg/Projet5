@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Structure\\Model\\Manager' => $baseDir . '/model/Manager.php',
-    'Structure\\Model\\PostManager' => $baseDir . '/model/postManager.php',
+    'Structure\\Manager' => $baseDir . '/model/Manager.php',
+    'Structure\\PostManager' => $baseDir . '/model/postManager.php',
 );
