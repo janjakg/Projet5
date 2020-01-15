@@ -8,7 +8,7 @@ $title = "Decouvertes";
 <div class="banner">
 
   <div class="titre">
-    <h1 class=" m-5 pb-5">Brand New </h1>
+    <h1 class=" m-5 pb-5">TRACKLIST </h1>
   </div>
 </div>
 
