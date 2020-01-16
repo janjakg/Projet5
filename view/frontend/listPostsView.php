@@ -8,24 +8,31 @@ $title = "Decouvertes";
 <div class="banner">
 
   <div class="titre">
-    <h1 class=" m-5 pb-5">Brand New </h1>
+    <h1 class=" m-5 pb-5">Tracklist</h1>
   </div>
 </div>
 
-<?php while ($data = $posts->fetch()):?>
+<div class="row row-cols-1 row-cols-md-3">
 
-<div class="news">
-  <div class="shadow p-3 mb-5 bg-white rounded">
-    <h3>
-      <em><?= strip_tags(stripslashes($data['artist'])) ?></em>     
-    </h3>
-    <p>"<?= nl2br(strip_tags(stripslashes(substr($data['title'],0,200)))) ?>"</p>
-    <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">voir plus</a>
-    <p>envoyé le <?= nl2br(strip_tags(stripslashes($data['creation_date_fr']))) ?></p>
+  <?php while ($data = $posts->fetch()):?>
+
+  <div class="col mb-4">
+    <div class="card">
+      <img src="public/img/hiphop.jpg" class="card-img-top" alt="hiphop_image">
+      <div class="card-body">
+        <h5 class="card-title"><?= strip_tags(stripslashes($data['artist'])) ?></h5>
+        <p class="card-text"><?= nl2br(strip_tags(stripslashes(substr($data['title'],0,200)))) ?></p>
+        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-primary">voir plus</a>
+      </div>
+    </div>
   </div>
+
+  <?php endwhile;?>
+
 </div>
 
-<?php endwhile;?>
+
+
 
 <?php $content = ob_get_clean(); ?>
 
