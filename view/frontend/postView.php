@@ -11,9 +11,10 @@
 <section class="news">
 
   <div class="shadow-lg p-3 mb-5 bg-white rounded">
+  <img src="public/img/hiphop.jpg" alt="hiphop_image" style="width: 100%;">
 
-    <h2><?= strip_tags(stripslashes($post['title'])) ?></h2>
-    <p>
+    <h2>"<?= strip_tags(stripslashes($post['title'])) ?>"</h2>
+    <p>Titre de : 
       <?= strip_tags(stripslashes($post['artist'])) ?>
     </p>
     <div id="date">
@@ -24,7 +25,7 @@
   </div>
 </section>
 <section class="shadow-lg p-3 mb-5 bg-white rounded">
-  <h2>Commentaires</h2>
+  <h2>Commentaires</h2> 
   <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div class="form-group">
       <label for="author">Auteur</label>
