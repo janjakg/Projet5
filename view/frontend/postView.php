@@ -10,7 +10,7 @@
 <!--Liste des posts -->
 <section class="news">
 
-  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded" >
   <img src="public/img/hiphop.jpg" alt="hiphop_image" style="width: 100%;">
 
     <h2>"<?= strip_tags(stripslashes($post['title'])) ?>"</h2>
@@ -40,6 +40,30 @@
     </div>
   </form>
 </section>
+<!--lancement d'une condition avec une boucle pour récupérer les commentaires -->
+<?php if ($comments): ?>
+<div class="shadow-lg p-3 mb-5 bg-azure rounded">
+  <div class="comments">
+    <?php foreach ($comments as $comment): ?>
+    <div class="card mb-4">
+      <div class="card-body">
+        <p><strong><?= htmlspecialchars($comment['author']) ?></strong>
+          le <?= $comment['comment_date_fr'] ?></p>
+        <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+        <?php if ($comment['signalled'] == 0): ?>
+        <a href="index.php?action=signalledComment&amp;idComment=<?= $comment['id'] ?>&amp;idPost=<?= $_GET['id'] ?>"
+          class="btn btn-warning btn-sm active" role="button" aria-pressed="true">Signaler</a>
+        <?php else: ?>
+        <button class="btn btn-secondary"><em>commentaire signalé</em></button>
+        <?php endif; ?>
+      </div>
+    </div>
+    <?php endforeach; ?>
+  </div>
+</div>
+<?php else: ?>
+<p>Pas de commentaire</p>
+<?php endif; ?>
 
 
 
