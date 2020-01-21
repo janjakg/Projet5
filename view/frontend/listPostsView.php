@@ -16,7 +16,7 @@ $title = "Decouvertes";
 
   <?php while ($data = $posts->fetch()):?>
 
-  <div class="col mb-4">
+  <div class="col mb-5 pb-5">
     <div class="card">
       <img src="public/img/hiphop.jpg" class="card-img-top" alt="hiphop_image">
       <div class="card-body">
