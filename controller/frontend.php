@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 
 use Structure\{PostManager, Manager, CommentManager};
@@ -27,4 +28,15 @@ function addComment($postId, $author, $comment)
   }else{
     header('location: index.php?action=post&id=' . $postId);
   }
+}
+function signalledComment($commentId)
+{
+    $commentManager = new CommentManager();
+    $updateComment = $commentManager->signalledComments($commentId);
+    if($updateComment === false) {
+      throw new Exception('Problème dans la mise à jour');
+    }
+    else {
+        require('view/frontend/signalledComment.php');
+    }
 }
