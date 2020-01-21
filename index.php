@@ -1,6 +1,8 @@
 <?php
 
 require('controller/frontend.php');
+require('controller/backend.php');
+
 
 try
 {
@@ -30,6 +32,28 @@ try
                     echo 'Erreur : aucun identifiant de billet envoyé';
                 }
                 break;
+
+              case 'signalledComment':
+                if (isset($_GET['idComment']) && $_GET['idComment'] > 0) {
+                    signalledComment($_GET['idComment']);
+                } else {
+                    throw new Exception('Aucun identifiant de commentaire envoyé');
+                }
+                break;
+
+              case 'adminRegistration': 
+                                               
+                  adminRegistration();
+                  break;
+
+              case 'checkRegistration':
+                //Pour valider l'incription
+                  if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['email2']) && !empty($_POST['password']) && !empty($_POST['password2'])) {
+                    checkRegistration($_POST['pseudo'], $_POST['email'],!empty($_POST['email2']), $_POST['password'],!empty($_POST['password2']));
+                  }else {
+                    echo 'vous devez vraiment remplir tous les champs!';
+                  }
+                  break;
              
 
             default:
