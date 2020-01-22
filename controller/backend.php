@@ -72,3 +72,15 @@ function eraseComment($idComment)
       require('view/backend/eraseComment.php');
     }
 }
+function saveComment($commentId)
+{
+    $commentManager = new CommentManager();
+    $updateSignaledComment = $commentManager->retainComment($commentId);
+
+    if($updateSignaledComment === false) {
+      throw new Exception('commentaire non sauvegardé');
+    }
+    else {
+      require('view/backend/saveComment.php');
+    }
+}
