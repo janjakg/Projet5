@@ -85,6 +85,15 @@ try
                   throw new Exception(' aucun identifiant de commentaire effacé');
                 }
                   break;
+
+              case 'saveComment':
+                //Nous sauvegardons le commentaire
+                  if (isset($_GET['commentId']) && $_GET['commentId'] > 0) {
+                    saveComment($_GET['commentId']);
+                  } else {
+                    throw new Exception('aucun identifiant de commentaire sauvegardé');
+                  }
+                  break;
              
 
             default:
