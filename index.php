@@ -54,6 +54,29 @@ try
                     echo 'vous devez vraiment remplir tous les champs!';
                   }
                   break;
+
+              case 'adminLogin':
+                //Avec cette condition si la session est commencée il ne sera pas nécessaire que le script nous amène sur la page de login  
+                if(isset($_SESSION['pseudo'])) {
+                    header('Location:index.php?action=adminIndex');
+                } else {
+                  adminLogin();
+                }    
+                  break;
+  
+              case 'checkUser':
+                //Vérification du login
+                  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+                    checkUser($_POST['email'], $_POST['password']);
+                  } else {
+                    echo 'vous devez remplir tous les champs!';
+                    require('view/backend/adminLogin.php'); 
+                  }              
+                  break;
+                  
+              case 'adminIndex':           
+                getSignaledComments();
+                  break;
              
 
             default:
