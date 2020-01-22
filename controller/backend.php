@@ -60,3 +60,15 @@ function getSignaledComments()
       require('view/backend/adminIndex.php');
     }
 }
+function eraseComment($idComment)
+{
+    $commentManager = new CommentManager();
+    $destroyComment = $commentManager->deleteComment($idComment);
+
+    if($destroyComment === false) {
+      throw new Exception('commentaire non supprimé');
+    }
+    else {
+      require('view/backend/eraseComment.php');
+    }
+}
