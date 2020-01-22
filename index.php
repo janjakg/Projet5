@@ -77,6 +77,14 @@ try
               case 'adminIndex':           
                 getSignaledComments();
                   break;
+
+              case 'eraseComment':
+                if (isset($_GET['idComment']) && $_GET['idComment'] > 0) {
+                  eraseComment( $_GET['idComment']);
+                } else {
+                  throw new Exception(' aucun identifiant de commentaire effacé');
+                }
+                  break;
              
 
             default:
