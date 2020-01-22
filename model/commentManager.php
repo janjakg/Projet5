@@ -45,4 +45,12 @@ class CommentManager extends Manager
       return $destroyComment;
   }
 
+  public function retainComment($commentId)
+  {
+      $db = $this->dbConnect();
+      $req = $db->prepare('UPDATE comments SET signalled = 0 WHERE comments.id = ?');
+      $updateSignaledComment = $req->execute([$commentId]);
+      return $updateSignaledComment;
+  }
+
 }
