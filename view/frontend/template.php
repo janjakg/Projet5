@@ -29,7 +29,7 @@
             <a class="nav-link" href="index.php?action=adminRegistration">Inscription</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Connexion</a>
+            <a class="nav-link" href="index.php?action=adminLogin">Connexion</a>
           </li>
         </ul>
       </div>
