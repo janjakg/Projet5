@@ -94,6 +94,19 @@ try
                     throw new Exception('aucun identifiant de commentaire sauvegardé');
                   }
                   break;
+                  
+              case 'adminCrud' :
+                postListing();
+                break;
+
+              case 'erasePost' :
+                  if(isset($_GET['idPost']) && isset($_GET['idComment']) && $_GET['idPost'] > 0) {
+                    erasePost($_GET['idPost'], $_GET['idComment']); 
+                    
+                  } else {
+                    throw new Exception('aucun identifiant de post supprimé');
+                  }
+                  break;
              
 
             default:
