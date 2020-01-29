@@ -31,4 +31,33 @@ class PostManager extends Manager
 
     return $destroyPost;
   }
+
+  public function updatePost($id, $title, $content)
+  {
+    $db = $this->dbconnect();    
+    $req = $db->prepare('UPDATE posts SET title = :title, content = :content WHERE id = :id');
+    
+    $postModified = $req->execute([      
+      'title' => $title,
+      'content' => $content,
+      'id' => $id,
+    ]);
+  }
+
+  public function addPost()
+  {
+    $db = $this->dbconnect();
+    $req = $db->prepare("INSERT INTO posts( title, content) VALUES ('?','?' )");
+    $postAdded = $req;
+   
+    return $postAdded;
+  }
+  public function postSender($title,$content)
+  {
+    $db = $this->dbconnect();
+    $req = $db->prepare("INSERT INTO posts( title, content) VALUES ('$title', '$content')");
+    $forward = $req->execute([$title,$content]);
+
+    return $forward;
+  } 
 }
