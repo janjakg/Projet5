@@ -107,6 +107,41 @@ try
                     throw new Exception('aucun identifiant de post supprimé');
                   }
                   break;
+
+              case 'readPost' :
+                if(isset($_GET['postId']) && $_GET['postId'] > 0) {
+                  readPost($_GET['postId']);
+                } else {
+                  throw new Exception('aucun identifiant d\'article renseigné');
+                }
+                break;
+
+              case 'editPost':
+                editPost($_GET['idPost']);
+                break; 
+
+              case 'updatePost':
+                //Nous procédons ici à la mise à jour            
+                if(!empty($_POST['content']) && !empty($_POST['title'])) {
+                      updatePost($_GET['idPost'],addslashes(strip_tags($_POST['title'])), addslashes(strip_tags($_POST['content'])));              
+                  } else {
+                      throw new Exception('Aucun post updated');
+                  }             
+                  break;
+
+              case 'createPost' : 
+                //Nous accédons à la page de création de post                  
+                    createPost();                                                   
+                  break;
+
+              case 'sendPost' :
+                //Nous envoyons le post
+                  if(!empty($_POST['title']) && !empty($_POST['content'])) {
+                    sendPost(addslashes(strip_tags($_POST['title'])),addslashes(strip_tags($_POST['content'])));
+                      } else {              
+                      throw new Exception('Merci de créez votre poste');                    
+                  }           
+                  break;
              
 
             default:
