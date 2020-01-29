@@ -9,9 +9,14 @@
 </div>
 <!--Liste des posts -->
 <section class="news">
+    
 
   <div class="shadow-lg p-3 mb-5 bg-white rounded" >
-  <img src="public/img/hiphop.jpg" alt="hiphop_image" style="width: 100%;">
+  
+  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+  <div id="player">
+  
+  </div>
 
     <h2>"<?= strip_tags(stripslashes($post['title'])) ?>"</h2>
     <p>Titre de : 
