@@ -102,3 +102,61 @@ function erasePost($idComment, $idPost)
       require('view/backend/erasePost.php');
     }
 }
+function readPost($id)
+{
+    $postManager = new PostManager();
+    $displayPost = $postManager->getPost($id);
+
+    if($displayPost === false) {
+      throw new Exception('post non affiché');
+    }
+    else {
+      require('view/backend/readPost.php');
+    }
+}
+function updatePost($id, $title, $content)
+{
+    $postManager =  new PostManager();
+    $postModified = $postManager->updatePost($id, $title, $content);
+
+    if($postModified === false) {
+      throw new Exception('post non modifié');
+    }
+    else {
+      require('view/backend/updateInfo.php');
+    }
+}
+function editPost($id)
+{
+    $postManager = new PostManager();
+    $post = $postManager->getPost($id);
+
+    if($post === false) {
+      throw new exception('post inexistant');
+    }
+    else{
+      require('view/backend/editPost.php');
+    }
+}
+function createPost()
+{
+    $postManager = new PostManager();
+    $postAdded = $postManager->addPost();   
+
+    if ($postAdded === false) {
+        throw new Exception('impossible d\ajouter le post!');
+    } else {
+      require('view/backend/createPost.php'); 
+    }    
+}
+function sendPost($title,$content)
+{
+    $postManager = new PostManager();
+    $forward = $postManager->postSender($title,$content);
+
+    if ($forward === false) {
+      throw new Exception('impossible d\envoyer le post!');
+    } else {
+      require('view/backend/createInfo.php');
+    }
+}
