@@ -13,9 +13,13 @@
 
 <body> 
   <nav class="bloc_page">
-    <nav class="navbar sticky-top navbar navbar-expand-lg navbar navbar-dark bg-dark">
-
-      <a class="navbar-brand" href="#">Nom du Site</a>
+    <nav class="navbar sticky-top navbar  navbar-dark bg-dark">
+    <?php if (isset($_SESSION['pseudo'])) :?>
+      <span class="badge badge-pill badge-success">connecté </span>
+      <?php else :?>
+      <p> </p>
+      <?php endif;?>
+      <a class="navbar-brand" href="#">PLAY MY LIST</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,12 +29,22 @@
           <li class="nav-item active">
             <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
           </li>
+          <?php if (isset($_SESSION['pseudo'])) :?>
+            <li class="nav-item">
+            <a class="nav-link" href="index.php?action=adminLogin">Dashboard</a>
+          </li>  
           <li class="nav-item">
+            <a class="nav-link" href="index.php?action=adminLogout">déconnexion</a>
+          </li>      
+          <?php else :?>
+            <li class="nav-item">
             <a class="nav-link" href="index.php?action=adminRegistration">Inscription</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.php?action=adminLogin">Connexion</a>
           </li>
+          <?php endif;?>
+          
         </ul>
       </div>
     </nav>
@@ -56,6 +70,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
+   <script src="public/js/track.js"></script>
  
 </body>
 
