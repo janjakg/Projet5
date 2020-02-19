@@ -1,43 +1,39 @@
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
+$(document).ready(function() {
+    const apiUrl = 'https://api.deezer.com/artist/';
+    const format = '&format = json';
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    let artist = $('#artist');
+    let title = $('#title');
+    let album = $('#album');
+    let image = $('#image');
+    let errorMessage = $('#error-message');
 
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
+    $(artist).on('blur', function() {
+        let singer = $(this).val();
+        //console.log(singer);
+        let url = apiUrl + singer + format;
+        //console.log(url);
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '390',
-        width: '640',
-        videoId: 'M7lc1UVf-VE',
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
+        fetch(url, { method: 'get' }).then(response => response.json()).then(results => {
+            // console.log(results);
+            if (results) {
+                $.each(results, function(key, value) {
+                    //console.log(value);
+                    console.log(key, value);
+                    $(title).append('<option value="' + key + '">' + value + '</option>');
+                    $(album).append('<option value="' + key + '">' + value + '</option>');
+                    $(image).append('<option value="' + key + '">' + value + '</option>');
+                });
+            } else {
+                if ($(artist).val()) {
+                    console.log('artiste inexistant');
+                    $(errorMessage).text('artiste inexistant dans notre base').show();
+                } else {
+                    $(errorMessage).text('').hide();
+                }
+            }
+        }).catch(err => {
+            console.log(err);
+        });
     });
-}
-
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-    event.target.playVideo();
-}
-
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-var done = false;
-
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
-        done = true;
-    }
-}
-
-function stopVideo() {
-    player.stopVideo();
-}
+});
