@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'vendor/autoload.php';
 
 use Structure\{PostManager, Manager, CommentManager, RegistrationManager, LoginManager};
@@ -44,7 +44,7 @@ function checkUser($email,$password)
           $_SESSION['email'] = $member['email'];       
           getSignaledComments();      
           } else {
-              echo 'Mauvais identifiant ou mot de passe !'; 
+              echo 'Mauvais identifiante ou mot de passe !'; 
               require('view/backend/adminLogin.php');            
               }     
     }
@@ -114,10 +114,10 @@ function readPost($id)
       require('view/backend/readPost.php');
     }
 }
-function updatePost($id, $title, $content)
+function updatePost($id, $artist,$title,$albumName,$imageAlbum)
 {
     $postManager =  new PostManager();
-    $postModified = $postManager->updatePost($id, $title, $content);
+    $postModified = $postManager->updatePost($id, $artist,$title,$albumName,$imageAlbum);
 
     if($postModified === false) {
       throw new Exception('post non modifié');
@@ -149,14 +149,21 @@ function createPost()
       require('view/backend/createPost.php'); 
     }    
 }
-function sendPost($title,$content)
+function sendPost($artist,$title,$albumName, $imageAlbum)
 {
     $postManager = new PostManager();
-    $forward = $postManager->postSender($title,$content);
+    $forward = $postManager->postSender($artist, $title, $albumName, $imageAlbum);
 
     if ($forward === false) {
       throw new Exception('impossible d\envoyer le post!');
     } else {
-      require('view/backend/createInfo.php');
+      require('view/backend/updateInfo.php');
     }
+}
+function adminLogout()
+{
+    $loginManager = new LoginManager();
+    $disconnect = $loginManager->logout();
+
+    header('Location: index.php?action=adminLogout'); 
 }
