@@ -122,8 +122,8 @@ try
 
               case 'updatePost':
                 //Nous procédons ici à la mise à jour            
-                if(!empty($_POST['content']) && !empty($_POST['title'])) {
-                      updatePost($_GET['idPost'],addslashes(strip_tags($_POST['title'])), addslashes(strip_tags($_POST['content'])));              
+                if(!empty($_POST['artist']) && !empty($_POST['title'])) {
+                      updatePost($_GET['idPost'],addslashes(strip_tags($_POST['artist'])), addslashes(strip_tags($_POST['title'])),addslashes(strip_tags($_POST['albumName'])),addslashes(strip_tags($_POST['imageAlbum'])));              
                   } else {
                       throw new Exception('Aucun post updated');
                   }             
@@ -136,11 +136,24 @@ try
 
               case 'sendPost' :
                 //Nous envoyons le post
-                  if(!empty($_POST['title']) && !empty($_POST['content'])) {
-                    sendPost(addslashes(strip_tags($_POST['title'])),addslashes(strip_tags($_POST['content'])));
+                  if(!empty($_POST['artist']) && !empty($_POST['title']) && !empty($_POST['albumName']) && !empty($_POST['imageAlbum'])) {
+                    sendPost(addslashes(strip_tags($_POST['artist'])),addslashes(strip_tags($_POST['title'])),addslashes(strip_tags($_POST['albumName'])),addslashes(strip_tags($_POST['imageAlbum'])));
                       } else {              
                       throw new Exception('Merci de créez votre poste');                    
                   }           
+                  break;
+
+              case 'adminLogout':  
+                //session_start() ; 
+                if(isset($_SESSION['pseudo']))  {
+                  $_SESSION = array();
+                  session_destroy();
+                  echo'session terminée';                 
+                  header('Location: index.php?action=adminLogin');                             
+                  
+                }  else {
+                  throw new exception('logout non fonctionnel');
+                }                                           
                   break;
              
 
