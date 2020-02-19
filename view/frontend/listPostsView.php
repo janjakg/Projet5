@@ -7,8 +7,9 @@ $title = "Decouvertes";
 
 <div class="banner">
 
-  <div class="titre">
-    <h1 class=" m-5 pb-5">Tracklist</h1>
+<div class="jumbotron ">
+  <div class="container">
+    <h1 class="display-4 ">Tracklist...</h1>    
   </div>
 </div>
 
@@ -18,11 +19,12 @@ $title = "Decouvertes";
 
   <div class="col mb-5 pb-5">
     <div class="card">
-      <img src="public/img/hiphop.jpg" class="card-img-top" alt="hiphop_image">
+      <img src="<?= strip_tags(stripslashes($data['imageAlbum'])) ?>",
+ class="card-img-top" alt="album_cover">
       <div class="card-body">
         <h5 class="card-title"><?= strip_tags(stripslashes($data['artist'])) ?></h5>
         <p class="card-text"><?= nl2br(strip_tags(stripslashes(substr($data['title'],0,200)))) ?></p>
-        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-primary">voir plus</a>
+        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-primary track">voir plus</a>
       </div>
     </div>
   </div>
