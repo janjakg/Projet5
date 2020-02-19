@@ -16,4 +16,13 @@ class LoginManager extends Manager
 
     return $member;
   }
+
+  public function logout()
+  {
+    $db = $this->dbconnect();
+    $req = $db->prepare("UPDATE members SET email = '?', password ='?' WHERE email= '?'");   
+    $disconnect = $req;
+
+    return $disconnect;
+  }
 }
