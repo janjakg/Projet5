@@ -8,17 +8,28 @@
   </div>
 </div>
 
-  <h2>Nouveau Post</h2>
+  <h2>Insertion</h2>
   <a href="index.php?action=adminCrud">Retour à la liste des titres</a>
   <form action="index.php?action=sendPost" method="post">
     <div class="form-group">
-      <label for="title">Titre</label>
-      <input type="text" class="form-control" name="title" id="title">
-    </div>
+      <label for="artist">Artiste</label>
+      <input type="text" class="form-control" name="artist" id="artist">  
+      <div style="display:none; color: #f55"; id="error message"></div>      
+    </div>  
+   <div class="form-group">
+      <label for="title">Titre</label>    
+      <select name="title" type="text" class="form-control" name="title" id="title"></select>      
+    </div> 
     <div class="form-group">
-    <label for="contenu">Url</label>
-    <textarea class="form-control" id="content" rows="3"></textarea>
-  </div>
+      <label for="album">Album</label>    
+      <select name="album" type="text" class="form-control" name="album" id="album"></select>      
+    </div>    
+    <div class="form-group">
+      <label for="image">Image</label>    
+      <select name="image" type="int" class="form-control" name="image" id="image"></select>      
+    </div>
+    
+    
 
     <button type="submit" class="btn btn-primary" name="submit">Envoi</button>
   </form>
