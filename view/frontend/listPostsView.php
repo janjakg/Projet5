@@ -33,7 +33,8 @@ $title = "Decouvertes";
   </div>
 
   
-<?= $page = $_GET['page'] ?>
+  <?= $page = (!empty($_GET['page']) ? $_GET['page'] : 1); ?>
+
   <a href="?page=<?= $page - 1; ?>">Page précédente</a>
   <a href="?page=<?= $page + 1; ?>">Page suivante</a>
 
