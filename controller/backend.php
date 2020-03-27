@@ -44,7 +44,7 @@ function checkUser($email,$password)
           $_SESSION['email'] = $member['email'];       
           getSignaledComments();      
           } else {
-              echo 'Mauvais identifiante ou mot de passe !'; 
+              echo 'Mauvais identifiant ou mot de passe !'; 
               require('view/backend/adminLogin.php');            
               }     
     }
@@ -167,3 +167,5 @@ function adminLogout()
 
     header('Location: index.php?action=adminLogout'); 
 }
+
+
