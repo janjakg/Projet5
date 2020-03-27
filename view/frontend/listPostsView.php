@@ -32,6 +32,11 @@ $title = "Decouvertes";
 
   </div>
 
+  
+<?= $page = $_GET['page'] ?>
+  <a href="?page=<?= $page - 1; ?>">Page précédente</a>
+  <a href="?page=<?= $page + 1; ?>">Page suivante</a>
+
 
 
 
