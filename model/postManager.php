@@ -3,13 +3,21 @@
 namespace Structure;
 
 require 'vendor/autoload.php';
+
+use PDO;
 class PostManager extends Manager
 {
   public function getPosts()
-  {
-    $db = $this-> dbConnect();
-    $req = $db-> query('SELECT id, artist, imageAlbum, title, albumName, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 9');
-    
+  {      
+    $db = $this-> dbConnect();   
+    $limite = 3;
+
+    $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+    $debut = ($page - 1) * $limite;
+    $req = $db-> prepare('SELECT  SQL_CALC_FOUND_ROWS id, artist, imageAlbum, title, albumName, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT :limite OFFSET :debut');
+    $req->bindValue('limite', $limite, PDO::PARAM_INT);
+    $req->bindValue('debut', $debut, PDO::PARAM_INT);
+    $req->execute();
     return $req;
   }
 
@@ -62,4 +70,5 @@ class PostManager extends Manager
 
     return $forward;
   } 
+
 }
