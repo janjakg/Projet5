@@ -78,6 +78,10 @@ try
                 getSignaledComments();
                   break;
 
+              case 'adminIndexComment' :
+                displaySignaledComment(); 
+                  break; 
+
               case 'eraseComment':
                 if (isset($_GET['idComment']) && $_GET['idComment'] > 0) {
                   eraseComment( $_GET['idComment']);
@@ -155,6 +159,15 @@ try
                   throw new exception('logout non fonctionnel');
                 }                                           
                   break;
+
+              case 'pagination':
+                if(isset($_GET['id'])) {
+                  pagination();
+                }else {
+                  throw new exception('pagination non fonctionnelle');
+                }                                           
+                  break;
+                
              
 
             default:
