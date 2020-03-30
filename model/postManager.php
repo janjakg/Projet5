@@ -21,6 +21,17 @@ class PostManager extends Manager
     return $req;
   }
 
+  public function paginate()
+  {
+    $db = $this-> dbConnect();   
+    $req =$db->prepare ('SELECT found_rows()');
+    $resultFoundRows = $req->execute();
+    $nombredElementsTotal = $resultFoundRows->fetchColumn();
+    $nombreDePages = ceil($nombredElementsTotal / $limite);
+
+    return $nombredElementsTotal;
+  }
+
   public function getPost(int $id)
   {
     $db = $this-> dbConnect();
