@@ -40,3 +40,13 @@ function signalledComment($commentId)
         require('view/frontend/signalledComment.php');
     }
 }
+function pagination()
+{
+  $postManager = new \Structure\PostManager();
+  $$nombredElementsTotal = $postManager->paginate();
+  if($nombredElementsTotal === false){
+    throw new Exception('Problème dans la mise en page');
+  }else{
+    require('view/frontend/listPostView.php');
+  }
+}
