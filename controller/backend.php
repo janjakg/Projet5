@@ -60,6 +60,18 @@ function getSignaledComments()
       require('view/backend/adminIndex.php');
     }
 }
+
+function displaySignaledComment()
+{
+  $commentManager = new \Structure\CommentManager();
+  $signaledComments = $commentManager->getSignaledComments();
+ 
+  if ($signaledComments === false) {
+      throw new Exception('aucun commentaire signalé');
+  } else {
+    require('view/backend/adminIndexComment.php');
+  }
+}
 function eraseComment($idComment)
 {
     $commentManager = new CommentManager();
