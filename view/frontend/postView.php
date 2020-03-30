@@ -11,11 +11,11 @@
 <section class="news">
 
 
-  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded" >
     
       <section id="player">
         <div id="dz-root"></div>
-        <div id="player" style="width:100%;" align-text="center"></div>
+        <div id="player" style="width:100%;" ></div>
         <br />
         <div id="controlers">
 
