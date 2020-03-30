@@ -49,6 +49,7 @@ var callBackGetSucess = function(data) {
     //alert("meteo temps :" + data.main.temp);
     var element = document.getElementById("zoneArtist");
     //element.innerHTML = data['data'][0]['artist'].name + " (id numéro : " + data['data'][0]['artist'].id + ") , est l'auteur du titre '" + data['data'][0].title + " ' issu de l'album : " + data['data'][0]['album'].title + " et la pochette de son album est visible à l'url : " + data['data'][0]['album'].cover_medium;
+    //document.getElementById("infoToPaste").innerHTML = "à l'aide de ces données remplissez le formulaire avant envoi"
     document.getElementById("artistName").innerHTML = data['data'][0]['artist'].name
     document.getElementById("artistId").innerHTML = data['data'][0]['artist'].id
     document.getElementById("artistTrack").innerHTML = data['data'][0].title
