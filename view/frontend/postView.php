@@ -2,17 +2,16 @@
 
 <?php ob_start(); ?>
 
-<div class="shadow-none m-5 pb-5 bg-azure">
-  <div class="titre2">
-    <h1 class="text-center">Track</h1>
-  </div>
-</div>
+
 <!--Liste des posts -->
 <section class="news">
 
 
   <div class="shadow-lg p-3 mb-5 bg-white rounded" >
     
+  <div class="container">
+  <div class="row">
+  <div class="col">
       <section id="player">
         <div id="dz-root"></div>
         <div id="player" style="width:100%;" ></div>
@@ -25,21 +24,27 @@
           <br />        
 
           <br />
-          <input type="button" onclick="DZ.player.play(); return false;" value="Play" />
-          <input type="button" onclick="DZ.player.pause(); return false;" value="Pause" />
-          <input type="button" onclick="DZ.player.prev(); return false;" value="Prev" />
-          <input type="button" onclick="DZ.player.next(); return false;" value="Next" />
-          <br />
-          <input type="button" onclick="DZ.player.setMute(); return false;" value="Set Mute" />
-          <input type="button" onclick="DZ.player.setVolume(20); return false;" value="Set Volume 20" />
-          <input type="button" onclick="DZ.player.setVolume(80); return false;" value="Set Volume 80" />
+          
+      </section> 
+      </div>
+      <div class="col">
+      <div class="row row-cols-1 row-cols-md-3">
 
-          <br /><br /><br />
-        </div>
-        <div id="slider_seek" class="progressbarplay" style="">
-          <div class="bar" style="width: 0%;"></div>
-        </div>    
-      </section>  
+
+
+<div class="text-center p-5">
+
+<img src="<?= strip_tags(stripslashes($post['imageAlbum'])) ?>" class="rounded" alt="album_cover">
+
+ 
+</div>
+
+
+
+</div>
+    </div>
+  </div>
+  </div> 
 
     <h2>"<?= strip_tags(stripslashes($post['title'])) ?>"</h2>
     <p>Est mon titre préféré de l'album de :
