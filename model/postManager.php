@@ -10,7 +10,7 @@ class PostManager extends Manager
   public function getPosts()
   {      
     $db = $this-> dbConnect();   
-    $limite = 3;
+    $limite = 6;
 
     $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
     $debut = ($page - 1) * $limite;
