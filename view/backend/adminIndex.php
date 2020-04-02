@@ -4,7 +4,7 @@
 
 <div class="shadow-none m-5 pb-5 bg-light">
   <div class="titre2">
-    <h1 class="text-center">Tableau de bord</h1>
+    <h1 class="text-center">DASHBOARD</h1>
   </div>
 </div>
 
