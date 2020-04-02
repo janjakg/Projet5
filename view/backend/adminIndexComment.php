@@ -9,7 +9,7 @@ retour au tableau de bord
 </a>
 
 <div class="table-responsive-md">
-  <table class="table table-hover table-bordered">
+  <table class="table table-hover table-bordered table-dark">
     <thead>
       <tr>
         <th scope="col">Comment</th>
