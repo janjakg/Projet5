@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 
-<section class="shadow-lg p-3 mb-5 bg-white rounded">
+<section class="shadow-lg p-3 mb-5 bg-white rounded" >
  <h1>Gestion du contenu</h1>
 </section>
 <a href="index.php?action=adminIndex">
@@ -15,7 +15,7 @@ retour au tableau de bord
     </div>
     <div class="row">
       <div class="table-responsive">
-        <table class="table table-hover table-bordered">
+        <table class="table table-hover table-bordered table-dark">
           <thead>
             <th colspan="6" scope="col"><a class="btn btn-success" href="index.php?action=createPost">Insérer nouveau titre
                 </a></th>
