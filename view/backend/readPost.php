@@ -1,29 +1,37 @@
 <?php $title = "Lecture du Post" ?>
 
 <?php ob_start(); ?>
-<div class="shadow-none m-5 pb-5 bg-light">
-  <h1>Nom du Site</h1>
+<div class="shadow-none m-5 pb-5 bg">
+  <h1 class="text-center"></h1>
 </div>
 
 
 <section class="shadow-lg p-3 mb-5 bg-white rounded" align-text="center">
 
-   <div id="trackFont" >" <?= strip_tags(stripslashes(($displayPost['title'])))?> "</div>
+<a href="index.php?action=adminCrud">Retour à la liste des titres</a>
+
+
+  <div id="trackFont">" <?= strip_tags(stripslashes(($displayPost['title'])))?> "</div>
   <p id="artistPosition">de:
     <strong><?= strip_tags(stripslashes(strtoupper($displayPost['artist']))) ?></strong>
-
   </p>
 
-  <div class="col mb-5 pb-5">
-      <div class="card" style="max-width: 18rem;">
+
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
         <img src="<?= strip_tags(stripslashes($displayPost['imageAlbum'])) ?>" , class="card-img-top" alt="album_cover">
+      </div>
+      <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"><?= strip_tags(stripslashes($displayPost['artist'])) ?></h5>
           <p class="card-text"><?= nl2br(strip_tags(stripslashes(substr($displayPost['title'],0,200)))) ?></p>
-          <a href="index.php?action=post&amp;id=<?= $displayPost['id'] ?>" class="btn btn-primary track">voir plus</a>
+
         </div>
       </div>
     </div>
+  </div>
 
 </section>
 
@@ -35,20 +43,14 @@
   <br />
   <div id="controlers">
 
-    <input type="button"
+    <input type="button" class="btn btn-info" 
       onclick="DZ.player.playAlbum(<?= strip_tags(stripslashes($displayPost['albumName'])) ?>); return false;"
       value="activer le player avant de lancer la lecture" />
-
     <br />
-
     <br />
-
 
   </div>
-
-
 </section>
-<a href="index.php?action=adminCrud">Retour à la liste des titres</a>
 
 
 
