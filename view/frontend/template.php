@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="public/css/style.css">
 </head>
 
-<body>
+<body class="frontBody">
   <div class="bloc_page">
     <nav class="navbar sticky-top navbar  navbar navbar-dark bg-dark">
       <?php if (isset($_SESSION['pseudo'])) :?>
