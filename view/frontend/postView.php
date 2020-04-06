@@ -18,8 +18,8 @@
         <br />
         <div id="controlers">
 
-          <input type="button" onclick="DZ.player.playAlbum(<?= strip_tags(stripslashes($post['albumName'])) ?>); return false;"
-            value="activer le player" />
+          <input type="button" class="btn btn-info" onclick="DZ.player.playAlbum(<?= strip_tags(stripslashes($post['albumName'])) ?>); return false;"
+            value="Activate the player" />
          
           <br />        
 
