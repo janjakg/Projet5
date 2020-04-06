@@ -1,13 +1,7 @@
 var callBackGetSucess = function(data) {
     console.log("données api", data);
-    //alert("info titre : " + data['data'][1]['artist'].id);
-    //header("Access-Control-Allow-Origin: *");
-    //alert("meteo temps :" + data.main.temp);
     var element = document.getElementById("zoneArtist");
-    //element.innerHTML = data['data'][0]['artist'].name + " (id numéro : " + data['data'][0]['artist'].id + ") , est l'auteur du titre '" + data['data'][0].title + " ' issu de l'album : " + data['data'][0]['album'].title + " et la pochette de son album est visible à l'url : " + data['data'][0]['album'].cover_medium;
-    //document.getElementById("infoToPaste").innerHTML = "à l'aide de ces données remplissez le formulaire avant envoi"
     document.getElementById("artistName").innerHTML = data['data'][0]['artist'].name + '  '
-    document.getElementById("artistId").innerHTML = data['data'][0]['artist'].id + '  '
     document.getElementById("artistTrack").innerHTML = data['data'][0].title + '  '
     document.getElementById("albumName").innerHTML = data['data'][0]['album'].id + '  '
     document.getElementById("imageAlbum").innerHTML = data['data'][0]['album'].cover_medium + '  '
@@ -30,31 +24,9 @@ function buttonClickGet() {
         .always(function() {
             // alert(finished);
         });
-
 }
 
-/*(() => {
-    const button = document.querySelector('#btnCopy');
-
-    button.addEventListener('click', () => {
-        const text = document.querySelector('#artistName');
-        const range = document.createRange();
-
-        range.selectNode(text);
-        window.getSelection().addRange(range);
-
-        try {
-            if (document.execCommand('copy')) {
-                alert('texte copié')
-            }
-        } catch (error) {
-            alert('copie impossible');
-        }
-        //  window.getSelection().removeAllRanges();
-    });
-
-})();*/
-
+//Pour pouvoir faire un copier coller au moment de la création du titre
 function copyToClip(str) {
     function listener(e) {
         e.clipboardData.setData("text/html", str);
