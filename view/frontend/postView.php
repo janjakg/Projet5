@@ -7,44 +7,35 @@
 <section class="news">
 
 
-  <div class="shadow-lg p-3 mb-5 bg-white rounded" >
-    
-  <div class="container">
-  <div class="row">
-  <div class="col">
-      <section id="player">
-        <div id="dz-root"></div>
-        <div id="player" style="width:100%;" ></div>
-        <br />
-        <div id="controlers">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
 
-          <input type="button" class="btn btn-info" onclick="DZ.player.playAlbum(<?= strip_tags(stripslashes($post['albumName'])) ?>); return false;"
-            value="Activate the player" />
-         
-          <br />        
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <section id="player">
+            <div id="dz-root"></div>
+            <div id="player" style="width:100%;"></div>
+            <br />
+            <div id="controlers">
 
-          <br />
-          
-      </section> 
+              <input type="button" class="btn btn-info"
+                onclick="DZ.player.playAlbum(<?= strip_tags(stripslashes($post['albumName'])) ?>); return false;"
+                value="Activate the player" />
+              <br />
+              <br />
+          </section>
+        </div>
+        <div class="col">
+          <div class="row row-cols-1 row-cols-md-3">
+
+            <div class="text-center p-5">
+
+              <img src="<?= strip_tags(stripslashes($post['imageAlbum'])) ?>" class="rounded" alt="album_cover">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col">
-      <div class="row row-cols-1 row-cols-md-3">
-
-
-
-<div class="text-center p-5">
-
-<img src="<?= strip_tags(stripslashes($post['imageAlbum'])) ?>" class="rounded" alt="album_cover">
-
- 
-</div>
-
-
-
-</div>
     </div>
-  </div>
-  </div> 
 
     <h2>"<?= strip_tags(stripslashes($post['title'])) ?>"</h2>
     <p>Est mon titre préféré de l'album de :
@@ -98,9 +89,6 @@
 <?php else: ?>
 <p>Pas de commentaire</p>
 <?php endif; ?>
-
-
-
 
 <?php $content = ob_get_clean(); ?>
 
