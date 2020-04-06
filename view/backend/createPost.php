@@ -5,20 +5,15 @@
 <h1>Recherche d'un titre ou d'un artiste</h1>
 <a href="index.php?action=adminCrud">Retour à la liste des titres</a>
 
-<form action="index.php?action=sendPost" method="post" class="form-inline" >
-  
- <div class="form-group mx-sm-3 mb-2 pt-2">
+<form action="index.php?action=sendPost" method="post" class="form-inline">
+
+  <div class="form-group mx-sm-3 mb-2 pt-2">
 
     <input type="text" class="form-control" id="artist" placeholder="artiste ou titre">
     <div style="display:none; color: #f55" ; id="error message"></div>
   </div>
   <input type="button" class="btn btn-primary mb-2 " value="search" onclick="buttonClickGet()" />
 </form>
- <!--
-<input type="text" name="artiste ou titre" id="artist" placeholder="artiste ou titre">
-<input type="submit" name="valider" value="search" onclick="buttonClickGet()"/>-->
-</form>
-
 
 <div class="table-responsive" style="display:none" id="zoneArtist">
 
@@ -34,14 +29,9 @@
       <tr id="zoneArtist">
         <th scope="row">Nom de l'artiste :</th>
         <td><a id="artistName"> Artiste </a></td>
-        <td><a><button onclick="copyToClip(document.getElementById('artistName').innerHTML)" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="copier"> <i
-                class="far fa-copy" id="btnCopy"></i></button></a></td>
-      </tr>
-      <tr id="zoneArtist">
-        <th scope="row">Artiste id :</th>
-        <td><a id="artistId">Artiste id</a></td>
-        <td><a><button onclick="copyToClip(document.getElementById('artistId').innerHTML)" class="btn btn-info"> <i
-                class="far fa-copy" id="btnCopy"></i></button></a></td>
+        <td><a><button onclick="copyToClip(document.getElementById('artistName').innerHTML)" class="btn btn-info"
+              data-toggle="tooltip" data-placement="top" title="copier"> <i class="far fa-copy"
+                id="btnCopy"></i></button></a></td>
       </tr>
       <tr id="zoneArtist">
         <th scope="row">Titre :</th>
@@ -64,29 +54,28 @@
     </tbody>
   </table>
 
+  <p id="instructions"></p>
 
-<p id="instructions"></p>
+  <form action="index.php?action=sendPost" method="post">
+    <div class="form-group">
+      <label for="title">Artiste</label>
+      <input type="text" class="form-control" name="artist" id="pasteArtist" placeholder="coller le nom de l'artiste">
+    </div>
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input type="text" class="form-control" name="title" id="pasteTitle" placeholder="coller le titre">
+    </div>
+    <div class="form-group">
+      <label for="title">Album</label>
+      <input type="text" class="form-control" name="albumName" id="pasteAlbumName" placeholder="coller l'album id">
+    </div>
+    <div class="form-group">
+      <label for="title">Cover</label>
+      <input type="text" class="form-control" name="imageAlbum" id="pasteImageAlbum" placeholder="coller l'url">
+    </div>
 
-<form action="index.php?action=sendPost" method="post">
-  <div class="form-group">
-    <label for="title">Artiste</label>
-    <input type="text" class="form-control" name="artist" id="pasteArtist" placeholder="coller le nom de l'artiste">
-  </div>
-  <div class="form-group">
-    <label for="title">Titre</label>
-    <input type="text" class="form-control" name="title" id="pasteTitle" placeholder="coller le titre">
-  </div>
-  <div class="form-group">
-    <label for="title">Album</label>
-    <input type="text" class="form-control" name="albumName" id="pasteAlbumName" placeholder="coller l'album id">
-  </div>
-  <div class="form-group">
-    <label for="title">Cover</label>
-    <input type="text" class="form-control" name="imageAlbum" id="pasteImageAlbum" placeholder="coller l'url">
-  </div>
-
-  <button type="submit" class="btn btn-primary mb-4" name="submit">Envoi</button>
-</form>
+    <button type="submit" class="btn btn-primary mb-4" name="submit">Envoi</button>
+  </form>
 </div>
 
 </section>
