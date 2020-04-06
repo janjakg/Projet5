@@ -1,40 +1,15 @@
-#trackFont {
-    font-style: italic;
-    font-size: 30px;
-    font-family: 'Shrikhand', cursive;
-    text-align: center;
-    color: dimgrey;
-}
+/*********************INTRO************************/
 
-#artistPosition {
-    text-align: center;
-}
-
-.page {
-    min-height: 100vh;
-}
-
-.jumbotron {
-    margin-top: 20px;
-}
-
-#instructions {
-    color: red;
-}
-
-#artistName {
-    color: blue;
-}
-
-.adminBody {
+html,
+body {
     margin: 0;
     padding: 0;
-    background: url('/public/img/newyork.jpg') no-repeat center fixed;
-    -webkit-background-size: cover;
-    /* pour anciens Chrome et Safari */
-    background-size: cover;
-    /* version standardisée */
+    width: 100%;
+    height: 100%;
 }
+
+
+/**************************FRONTEND**************************/
 
 .frontBody {
     margin: 0;
@@ -47,6 +22,38 @@
     font-family: 'Cinzel', serif;
 }
 
-h1 {
-    font-family: 'Slabo 27px', serif;
+.page {
+    min-height: 100vh;
+}
+
+.jumbotron {
+    margin-top: 20px;
+}
+
+#trackFont {
+    font-style: italic;
+    font-size: 30px;
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+    color: dimgrey;
+}
+
+#artistPosition {
+    text-align: center;
+}
+
+#instructions {
+    color: black;
+    font-weight: bold;
+}
+
+.adminBody {
+    margin: 0;
+    padding: 0;
+    background: url('/public/img/newyork.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+    /* pour anciens Chrome et Safari */
+    background-size: cover;
+    /* version standardisée */
+    font-family: 'Montserrat', sans-serif;
 }
