@@ -1,8 +1,8 @@
 <?php $title = "Post modifié" ?>
 
 <?php ob_start(); ?>
-<div class="shadow-none m-5 pb-5 bg-light">
-  <h1>Commentaires signalés</h1>
+<div class="shadow-none m-5 pb-5 ">
+  <h1 class="text-center">Commentaires signalés</h1>
 </div>
 <a  href="index.php?action=adminIndex" >
 retour au tableau de bord
