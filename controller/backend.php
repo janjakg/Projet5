@@ -99,9 +99,10 @@ function saveComment($commentId)
 function postListing()
 {
     $postManager = new PostManager();
-    $posts = $postManager->getPosts();
+    $nombredElementsTotal = $postManager->getAllPosts();
     require('view/backend/adminCrud.php');
 }
+
 function erasePost($idComment, $idPost)
 {
     $postManager = new PostManager();
@@ -114,6 +115,20 @@ function erasePost($idComment, $idPost)
       require('view/backend/erasePost.php');
     }
 }
+
+function eraseJustPost($idPost)
+{
+    $postManager = new PostManager();
+    $destroyJustPost = $postManager->deleteJustPost($idPost);
+
+    if($destroyJustPost === false) {
+      throw new Exception('Justpost non supprimé');
+    }
+    else {
+      require('view/backend/erasePost.php');
+    }
+}
+
 function readPost($id)
 {
     $postManager = new PostManager();
