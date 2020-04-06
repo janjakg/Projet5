@@ -2,8 +2,8 @@
 
 <?php ob_start(); ?>
 <div class="headline">
-  <div class="shadow-none m-5 pb-5 bg-light">
-    <h1>Nom du site</h1>
+  <div class="shadow-none m-5 pb-5 ">
+    <h1 class="text-center">Commentaires signalés</h1>
   </div>
 </div>
 
