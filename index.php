@@ -10,7 +10,14 @@ try
         switch ($_GET['action'])  {
 //accès au blog
             case 'listPosts':
-              listPosts();
+              if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page']> 0){
+                $_GET['page'] = intval($_GET['page']);
+                $pageCourante = $_GET['page'];
+                listPosts();
+              }else{
+                $pageCourante = 1;
+              }
+             
               break; 
 
             case 'post':
@@ -106,11 +113,11 @@ try
               case 'erasePost' :
                   if(isset($_GET['idPost']) && isset($_GET['idComment']) && $_GET['idPost'] > 0) {
                     erasePost($_GET['idPost'], $_GET['idComment']); 
-                    
+                    eraseJustPost($_GET['idPost']);
                   } else {
                     throw new Exception('aucun identifiant de post supprimé');
                   }
-                  break;
+                  break;             
 
               case 'readPost' :
                 if(isset($_GET['postId']) && $_GET['postId'] > 0) {
@@ -158,18 +165,14 @@ try
                 }  else {
                   throw new exception('logout non fonctionnel');
                 }                                           
-                  break;
-
+                  break; 
+              
               case 'pagination':
-                if(isset($_GET['id'])) {
-                  pagination();
-                }else {
-                  throw new exception('pagination non fonctionnelle');
-                }                                           
-                  break;
-                
-             
+                pagination();
+              break;    
+              
 
+             
             default:
             echo 'Pas d\'action';
             break; 
