@@ -11,7 +11,8 @@ class PostManager extends Manager
   {      
     $db = $this-> dbConnect();   
     $limite = 6;
-
+    $nombredElementsTotal =$db->query('SELECT id FROM posts');  
+    $nombredElements = $nombredElementsTotal ->rowCount();
     $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
     $debut = ($page - 1) * $limite;
     $req = $db-> prepare('SELECT  SQL_CALC_FOUND_ROWS id, artist, imageAlbum, title, albumName, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT :limite OFFSET :debut');
@@ -21,14 +22,13 @@ class PostManager extends Manager
     return $req;
   }
 
-  public function paginate()
-  {
+  public function getAllPosts()
+  {       
     $db = $this-> dbConnect();   
-    $req =$db->prepare ('SELECT found_rows()');
-    $resultFoundRows = $req->execute();
-    $nombredElementsTotal = $resultFoundRows->fetchColumn();
-    $nombreDePages = ceil($nombredElementsTotal / $limite);
-
+    $req = $db-> query('SELECT id, artist, title, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC /*LIMIT 0, 9*/');
+    $nombredElementsTotal = $req;
+  
+   
     return $nombredElementsTotal;
   }
 
@@ -49,6 +49,15 @@ class PostManager extends Manager
     $destroyPost = $req->execute(array($idComment, $idPost));
 
     return $destroyPost;
+  }
+
+  public function deleteJustPost($idPost)
+  {
+    $db = $this->dbconnect();
+    $req = $db->prepare('DELETE posts FROM posts WHERE  posts.id = ?');
+    $destroyJustPost = $req->execute([$idPost]);
+
+    return $destroyJustPost;
   }
 
   public function updatePost($id, $artist, $title, $albumName, $imageAlbum)
