@@ -3,8 +3,8 @@
 <?php ob_start(); ?>
 
 
-<section class="shadow-lg p-3 mb-5 bg-white rounded" >
- <h1>Gestion du contenu</h1>
+<section class="shadow-none p-3 mb-5  rounded" >
+ <h1 class="text-center">Gestion du contenu</h1>
 </section>
 <a href="index.php?action=adminIndex">
 retour au tableau de bord
@@ -26,10 +26,10 @@ retour au tableau de bord
             </tr>
           </thead>
           <tbody>
-            <?php while ($list = $posts->fetch()): ?>
+            <?php while ($list = $nombredElementsTotal->fetch()): ?>
             <tr>
               <td><strong><?= (stripslashes(strip_tags($list['title']))) ?></strong></td>
-              <td><?= stripslashes(strip_tags((substr($list['artist'],0,90)))) ?>...</td>
+              <td><?= stripslashes(strip_tags((substr($list['artist'],0,90)))) ?></td>
               <td><a class="btn btn-secondary" href="index.php?action=readPost&amp;postId=<?=($list['id']) ?>">Read</a>
               </td>
               <td><a class="btn btn-info" href="index.php?action=editPost&amp;idPost=<?= ($list['id']) ?>">Update</a>
@@ -43,10 +43,6 @@ retour au tableau de bord
         </table>
       </div>
     </div>
-
-
-
-
 
 <?php $content = ob_get_clean(); ?>
 
