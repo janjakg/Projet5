@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
 //Petite animation de texte sur la page d'accueil
->>>>>>> pagination2
+
 const txtAnim = document.querySelector('h1');
 new Typewriter(txtAnim, {
         //deleteSpeed: 20
