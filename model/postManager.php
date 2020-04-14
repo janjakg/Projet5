@@ -2,12 +2,40 @@
 
 namespace Structure;
 
+<<<<<<< HEAD
 require 'vendor/autoload.php';
 
 use PDO;
 class PostManager extends Manager
 {
   public function getPosts()
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+require_once('model/Manager.php');
+class PostManager extends Manager
+{
+  public function getPosts()
+  {
+    $db = $this-> dbConnect();
+    $req = $db-> query('SELECT id, artist, title, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+    
+=======
+require 'vendor/autoload.php';
+
+use PDO;
+class PostManager extends Manager
+{
+  public function getPosts()
+=======
+require 'vendor/autoload.php';
+
+use PDO;
+class PostManager extends Manager
+{
+  public function getPosts()
+>>>>>>> pagination2
+>>>>>>> master
   {      
     $db = $this-> dbConnect();   
     $limite = 6;
@@ -19,6 +47,13 @@ class PostManager extends Manager
     $req->bindValue('limite', $limite, PDO::PARAM_INT);
     $req->bindValue('debut', $debut, PDO::PARAM_INT);
     $req->execute();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> pagination2
+=======
+>>>>>>> pagination2
+>>>>>>> master
     return $req;
   }
 

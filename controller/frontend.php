@@ -3,17 +3,47 @@
 require 'vendor/autoload.php';
 
 use Structure\{PostManager, Manager, CommentManager};
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+//use Structure\{PostManager, Manager};
+
+function listPosts()
+{
+<<<<<<< HEAD
+    $postManager = new \Structure\PostManager();
+=======
+    $postManager = new \Structure\PostManager();    
+>>>>>>> pagination2
+=======
+>>>>>>> master
 
 function listPosts()
 {
     $postManager = new \Structure\PostManager();    
+<<<<<<< HEAD
+=======
+>>>>>>> pagination2
+>>>>>>> master
     $posts = $postManager->getPosts();
     require('view/frontend/listPostsView.php');
 }
 function post()
 {
     $postManager = new \Structure\PostManager();
+<<<<<<< HEAD
     $commentManager = new \Structure\CommentManager();
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    $commentManager = new \Structure\CommentManager();
+>>>>>>> pagination2
+=======
+    $commentManager = new \Structure\CommentManager();
+>>>>>>> pagination2
+>>>>>>> master
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
     require('view/frontend/postView.php');
