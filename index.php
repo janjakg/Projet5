@@ -3,20 +3,13 @@
 require('controller/frontend.php');
 require('controller/backend.php');
 
-
 try
 {
     if (isset($_GET['action'])) {
         switch ($_GET['action'])  {
 //accès au blog
-            case 'listPosts':
-              if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page']> 0){
-                $_GET['page'] = intval($_GET['page']);
-                $pageCourante = $_GET['page'];
-                listPosts();
-              }else{
-                $pageCourante = 1;
-              }
+            case 'listPosts':             
+                listPosts();            
              
               break; 
 
@@ -165,13 +158,7 @@ try
                 }  else {
                   throw new exception('logout non fonctionnel');
                 }                                           
-                  break; 
-              
-              case 'pagination':
-                pagination();
-              break;    
-              
-
+                  break;                            
              
             default:
             echo 'Pas d\'action';
