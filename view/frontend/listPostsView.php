@@ -7,43 +7,42 @@ $title = "Decouvertes";
 <div class="banner">
 
   <div class="titre">
-    <h1 class=" m-5 pb-5">TRACKLIST </h1>
+    
+    <div class="jumbotron ">
+      <div class="container">
+        <h1 class="animation">.</h1>
+      </div>
 
-  <div class="jumbotron ">
-    <div class="container">
-      <h1 class="animation">.</h1>
     </div>
 
-  </div>
+    <div class="row row-cols-1 row-cols-md-3">
 
-  <div class="row row-cols-1 row-cols-md-3">
+      <?php while ($data = $posts->fetch()):?>
 
-    <?php while ($data = $posts->fetch()):?>
-
-    <div class="col mb-5 pb-5">
-      <div class="card">
-        <img src="<?= strip_tags(stripslashes($data['imageAlbum'])) ?>" , class="card-img-top" alt="album_cover">
-        <div class="card-body">
-          <h5 class="card-title"><?= strip_tags(stripslashes($data['artist'])) ?></h5>
-          <p class="card-text"><?= nl2br(strip_tags(stripslashes(substr($data['title'],0,200)))) ?></p>
-          <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-primary track"><i
-              class="fas fa-play-circle"></i> Play</a>
+      <div class="col mb-5 pb-5">
+        <div class="card">
+          <img src="<?= strip_tags(stripslashes($data['imageAlbum'])) ?>" , class="card-img-top" alt="album_cover">
+          <div class="card-body">
+            <h5 class="card-title"><?= strip_tags(stripslashes($data['artist'])) ?></h5>
+            <p class="card-text"><?= nl2br(strip_tags(stripslashes(substr($data['title'],0,200)))) ?></p>
+            <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-primary track"><i
+                class="fas fa-play-circle"></i> Play</a>
+          </div>
         </div>
       </div>
+
+      <?php endwhile;?>
+
     </div>
 
-    <?php endwhile;?>
-
-  </div>
-
-  <?php $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+    <?php $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
     $lastPage = 5; 
   ?>
 
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
 
-      <?php
+        <?php
 
 /* Pagination
  * Si on est sur la première page, on n'a pas besoin d'afficher de lien
@@ -65,9 +64,9 @@ if ($page < $lastPage):
     ?><li class="page-item"> <a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li><?php
 endif;
 ?>
-    </ul>
-  </nav>
+      </ul>
+    </nav>
 
-  <?php $content = ob_get_clean(); ?>
+    <?php $content = ob_get_clean(); ?>
 
-  <?php require('template.php'); ?>
+    <?php require('template.php'); ?>
