@@ -12,14 +12,14 @@ function buttonClickGet() {
     var artist = document.getElementById("artist").value;
     var apiUrl = "https://api.deezer.com/search?q=" + artist;
 
-
     $.get(apiUrl, callBackGetSucess).done(function() {
             //alert(second success);
             document.getElementById("zoneArtist").style.display = "block";
+            document.getElementById("form").style.display = "block";
             document.getElementById("instructions").innerHTML = "Vous pouvez maintenant copier-coller les infos nécessaires dans le formulaire suivant :"
         })
         .fail(function() {
-            alert("error");
+            alert("Connexion à l'API impossible");
         })
         .always(function() {
             // alert(finished);
