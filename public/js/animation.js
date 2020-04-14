@@ -1,3 +1,4 @@
+//Petite animation de texte sur la page d'accueil
 const txtAnim = document.querySelector('h1');
 new Typewriter(txtAnim, {
         //deleteSpeed: 20
