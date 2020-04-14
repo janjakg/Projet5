@@ -53,10 +53,10 @@
       </tr>
     </tbody>
   </table>
-
+  </div>
   <p id="instructions"></p>
 
-  <form action="index.php?action=sendPost" method="post">
+  <form action="index.php?action=sendPost" method="post" style="display:none" id="form">
     <div class="form-group">
       <label for="title">Artiste</label>
       <input type="text" class="form-control" name="artist" id="pasteArtist" placeholder="coller le nom de l'artiste">
@@ -67,18 +67,15 @@
     </div>
     <div class="form-group">
       <label for="title">Album</label>
-      <input type="text" class="form-control" name="albumName" id="pasteAlbumName" placeholder="coller l'album id">
+      <input type="number" class="form-control" name="albumName" id="pasteAlbumName" placeholder="coller l'album id">
     </div>
     <div class="form-group">
       <label for="title">Cover</label>
-      <input type="text" class="form-control" name="imageAlbum" id="pasteImageAlbum" placeholder="coller l'url">
+      <input type="url" class="form-control" name="imageAlbum" id="pasteImageAlbum" placeholder="coller l'url">
     </div>
 
     <button type="submit" class="btn btn-primary mb-4" name="submit">Envoi</button>
   </form>
-</div>
-
-</section>
 
 <?php $content = ob_get_clean(); ?>
 
