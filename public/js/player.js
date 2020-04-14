@@ -1,8 +1,4 @@
 //Ce fichier est relatif au player Deezer que nous utilisons grace à l'API
-<<<<<<< HEAD
-
-=======
->>>>>>> 4723d87a693a405cd4a12f3d5bca841af09bd651
 $(document).ready(function() {
     $("#controlers input").attr('disabled', true);
     $("#slider_seek").click(function(evt, arg) {
