@@ -6,27 +6,10 @@ $title = "Decouvertes";
 <?php ob_start();?>
 <div class="banner">
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <div class="titre">
-    <h1 class=" m-5 pb-5">TRACKLIST </h1>
-=======
-=======
->>>>>>> pagination2
->>>>>>> master
   <div class="jumbotron ">
     <div class="container">
       <h1 class="animation">.</h1>
     </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> pagination2
-=======
->>>>>>> pagination2
->>>>>>> master
   </div>
 
   <div class="row row-cols-1 row-cols-md-3">
