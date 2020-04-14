@@ -7,13 +7,19 @@ $title = "Decouvertes";
 <div class="banner">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   <div class="titre">
     <h1 class=" m-5 pb-5">TRACKLIST </h1>
 =======
+=======
+>>>>>>> pagination2
   <div class="jumbotron ">
     <div class="container">
       <h1 class="animation">.</h1>
     </div>
+<<<<<<< HEAD
+>>>>>>> pagination2
+=======
 >>>>>>> pagination2
   </div>
 

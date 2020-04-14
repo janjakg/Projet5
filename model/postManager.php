@@ -3,6 +3,7 @@
 namespace Structure;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 require_once('model/Manager.php');
 class PostManager extends Manager
 {
@@ -18,6 +19,14 @@ use PDO;
 class PostManager extends Manager
 {
   public function getPosts()
+=======
+require 'vendor/autoload.php';
+
+use PDO;
+class PostManager extends Manager
+{
+  public function getPosts()
+>>>>>>> pagination2
   {      
     $db = $this-> dbConnect();   
     $limite = 6;
@@ -29,6 +38,9 @@ class PostManager extends Manager
     $req->bindValue('limite', $limite, PDO::PARAM_INT);
     $req->bindValue('debut', $debut, PDO::PARAM_INT);
     $req->execute();
+<<<<<<< HEAD
+>>>>>>> pagination2
+=======
 >>>>>>> pagination2
     return $req;
   }
