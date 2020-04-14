@@ -7,7 +7,7 @@ $title = "Decouvertes";
 <div class="banner">
 
   <div class="titre">
-    
+
     <div class="jumbotron ">
       <div class="container">
         <h1 class="animation"></h1>
@@ -34,15 +34,17 @@ $title = "Decouvertes";
       <?php endwhile;?>
 
     </div>
+  </div>
 
-    <?php $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+
+  <?php $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
     $lastPage = 5; 
   ?>
 
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
 
-        <?php
+      <?php
 
 /* Pagination
  * Si on est sur la première page, on n'a pas besoin d'afficher de lien
@@ -64,9 +66,9 @@ if ($page < $lastPage):
     ?><li class="page-item"> <a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li><?php
 endif;
 ?>
-      </ul>
-    </nav>
+    </ul>
+  </nav>
 
-    <?php $content = ob_get_clean(); ?>
+  <?php $content = ob_get_clean(); ?>
 
-    <?php require('template.php'); ?>
+  <?php require('template.php'); ?>
