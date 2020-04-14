@@ -40,14 +40,3 @@ function signalledComment($commentId)
         require('view/frontend/signalledComment.php');
     }
 }
-function pagination()
-{
-  $postManager = new PostManager();
-  $lastPage = $postManager->getPosts();
-  if($updateComment === false) {
-    throw new Exception('Problème de pagination');
-  }
-  else {
-      require('view/frontend/listPostsView.php');
-  }
-}
