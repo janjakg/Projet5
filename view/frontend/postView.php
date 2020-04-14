@@ -2,10 +2,8 @@
 
 <?php ob_start(); ?>
 
-
 <!--Liste des posts -->
 <section class="news">
-
 
   <div class="shadow-lg p-3 mb-5 bg-white rounded">
 
