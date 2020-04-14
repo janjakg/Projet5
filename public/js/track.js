@@ -1,46 +1,3 @@
-<<<<<<< HEAD
- //ce fichier nous permet de créer le titre dès que l'on cliquera sur le bouton correspondant à la fonction buttonClickGet
-
- var callBackGetSucess = function(data) {
-     console.log("données api", data);
-     var element = document.getElementById("zoneArtist");
-     document.getElementById("artistName").innerHTML = data['data'][0]['artist'].name + '  '
-     document.getElementById("artistTrack").innerHTML = data['data'][0].title + '  '
-     document.getElementById("albumName").innerHTML = data['data'][0]['album'].id + '  '
-     document.getElementById("imageAlbum").innerHTML = data['data'][0]['album'].cover_medium + '  '
- }
-
- function buttonClickGet() {
-
-     var artist = document.getElementById("artist").value;
-     var apiUrl = "https://api.deezer.com/search?q=" + artist;
-
-     $.get(apiUrl, callBackGetSucess).done(function() {
-             //alert(second success);
-             document.getElementById("zoneArtist").style.display = "block";
-             document.getElementById("form").style.display = "block";
-             document.getElementById("instructions").innerHTML = "Vous pouvez maintenant copier-coller les infos nécessaires dans le formulaire suivant :"
-         })
-         .fail(function() {
-             alert("Connexion à l'API impossible");
-         })
-         .always(function() {
-             // alert(finished);
-         });
- }
-
- //Pour pouvoir faire un copier coller au moment de la création du titre
- function copyToClip(str) {
-     function listener(e) {
-         e.clipboardData.setData("text/html", str);
-         e.clipboardData.setData("text/plain", str);
-         e.preventDefault();
-     }
-     document.addEventListener("copy", listener);
-     document.execCommand("copy");
-     document.removeEventListener("copy", listener);
- };
-=======
 //cette fichier nous permet de créer le titre dès que l'on cliquera sur le bouton correspondant à la fonction buttonClickGet
 var callBackGetSucess = function(data) {
     console.log("données api", data);
@@ -81,4 +38,3 @@ function copyToClip(str) {
     document.execCommand("copy");
     document.removeEventListener("copy", listener);
 };
->>>>>>> 4723d87a693a405cd4a12f3d5bca841af09bd651
