@@ -8,7 +8,7 @@ $title = "Decouvertes";
 
   <div class="jumbotron ">
     <div class="container">
-      <h1 class="display-4 ">Tracklist...</h1>
+      <h1 class="animation">.</h1>
     </div>
   </div>
 
@@ -41,7 +41,8 @@ $title = "Decouvertes";
 
       <?php
 
-/* Si on est sur la première page, on n'a pas besoin d'afficher de lien
+/* Pagination
+ * Si on est sur la première page, on n'a pas besoin d'afficher de lien
  * vers la précédente. On va donc l'afficher que si on est sur une autre
  * page que la première */
 
@@ -62,11 +63,6 @@ endif;
 ?>
     </ul>
   </nav>
-
-
-
-
-
 
   <?php $content = ob_get_clean(); ?>
 
