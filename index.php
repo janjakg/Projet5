@@ -1,6 +1,5 @@
 <?php
-//namespace Structure;
-//require 'vendor/autoload.php';
+
 require('controller/frontend.php');
 require('controller/backend.php');
 
