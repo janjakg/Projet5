@@ -36,7 +36,7 @@
 
     <input type="button" class="btn btn-info" 
       onclick="DZ.player.playAlbum(<?= strip_tags(stripslashes($displayPost['albumName'])) ?>); return false;"
-      value="activer le player avant de lancer la lecture" />
+      value="activer le player pour la lecture" />
     <br />
     <br />
 
