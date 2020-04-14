@@ -1,3 +1,4 @@
+//cette fichier nous permet de créer le titre dès que l'on cliquera sur le bouton correspondant à la fonction buttonClickGet
 var callBackGetSucess = function(data) {
     console.log("données api", data);
     var element = document.getElementById("zoneArtist");
