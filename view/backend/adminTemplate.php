@@ -13,6 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto+Condensed:wght@300&family=Slabo+27px&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
   <title>projet5</title>
   <link rel="stylesheet" href="public/css/style.css">
 </head>
@@ -25,7 +26,7 @@
       <?php else :?>
       <p> </p>
       <?php endif;?>
-      <a class="navbar-brand" href="#">PLAY MY LIST</a>
+      <a class="navbar-brand" href="#">Play My List</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,7 +61,6 @@
         <?= $content ?>
       </div>
     </div>
-
 
     <nav class="navbar sticky-bottom navbar-light navbar-dark bg-dark">
       <div class="container">
