@@ -1,6 +1,10 @@
 <?php
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> pagination2
 =======
 
 >>>>>>> pagination2
