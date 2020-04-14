@@ -10,7 +10,7 @@ $title = "Decouvertes";
     
     <div class="jumbotron ">
       <div class="container">
-        <h1 class="animation">.</h1>
+        <h1 class="animation"></h1>
       </div>
 
     </div>
