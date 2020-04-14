@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> pagination2
 namespace Structure;
 
 use PDO;
