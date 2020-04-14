@@ -1,3 +1,4 @@
+//Ce fichier est relatif au player Deezer que nous utilisons grace à l'API
 $(document).ready(function() {
     $("#controlers input").attr('disabled', true);
     $("#slider_seek").click(function(evt, arg) {
