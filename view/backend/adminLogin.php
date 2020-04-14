@@ -2,8 +2,8 @@
 
 <?php ob_start();?>
 
-<div class="shadow-none m-5 pb-5 bg-light">
-  <h1>CONNEXION</h1>
+<div class="shadow-none m-5 pb-5 ">
+  <h1 class="text-center">CONNEXION</h1>
 </div>
 
 <form action="index.php?action=checkUser" class="shadow-none m-5" method="post">
@@ -27,7 +27,6 @@
   </div>
 
 </form>
-
 
 <?php $content = ob_get_clean(); ?>
 
