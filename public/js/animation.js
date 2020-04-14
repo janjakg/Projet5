@@ -9,5 +9,5 @@ new Typewriter(txtAnim, {
     .typeString('<span style="font-family:Homemade Apple">For Music Lover</span>')
     .pause(1000)
     .deleteChars(15)
-    .typeString('<span style="color:red" style="font-family:Homemade Apple"> For Music Lovers...</span>')
+    .typeString('<span style="color:red" style="font-family:Homemade Apple"> For Music Lovers Only...</span>')
     .start()
