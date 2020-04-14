@@ -9,6 +9,20 @@ body {
 }
 
 
+/*************************TEMPLATE************************/
+
+.navbar-brand {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.animation {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 35px;
+}
+
+
 /**************************FRONTEND**************************/
 
 .frontBody {
