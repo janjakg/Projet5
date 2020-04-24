@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+  <!-- Template pour la partie admin -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +21,9 @@
 <body class="adminBody">
   <div class="bloc_page">
     <nav class="navbar sticky-top navbar  navbar-dark bg-dark">
-      <?php if (isset($_SESSION['pseudo'])) :?>
+      <?php if (isset($_SESSION['pseudo'])): ?>
       <span class="badge badge-pill badge-success">connecté </span>
-      <?php else :?>
+      <?php else: ?>
       <p> </p>
       <?php endif;?>
       <a class="navbar-brand" href="#">Play My List</a>
@@ -36,14 +36,14 @@
           <li class="nav-item active">
             <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
           </li>
-          <?php if (isset($_SESSION['pseudo'])) :?>
+          <?php if (isset($_SESSION['pseudo'])): ?>
           <li class="nav-item">
             <a class="nav-link" href="index.php?action=adminLogin">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.php?action=adminLogout">déconnexion</a>
           </li>
-          <?php else :?>
+          <?php else: ?>
           <li class="nav-item">
             <a class="nav-link" href="index.php?action=adminRegistration">Inscription</a>
           </li>
@@ -58,7 +58,7 @@
 
     <div class="container">
       <div class="page">
-        <?= $content ?>
+        <?=$content?>
       </div>
     </div>
 
@@ -84,6 +84,7 @@
     <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
     <script src="public/js/track.js"></script>
     <script src="public/js/player.js"></script>
+    <script src="public/js/scrollup.js"></script>
 
 </body>
 
