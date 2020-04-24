@@ -1,4 +1,4 @@
-//Petite animation de texte sur la page d'accueil
+//Petite animation de texte qui s'écrit au fur et à mesure et qui change de couleur sur la page d'accueil et sur la page  postView
 const txtAnim = document.querySelector('h1');
 new Typewriter(txtAnim, {
         //deleteSpeed: 20
