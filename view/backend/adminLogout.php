@@ -1,6 +1,6 @@
-<?php $title = "Déconnexion" ?>
+<?php $title = "Déconnexion"?>
 
-<?php ob_start(); ?>
+<?php ob_start();?>
 <div class="shadow-none m-5 pb-5 bg-light">
   <h1>Nom du site</h1>
 </div>
@@ -13,6 +13,6 @@
   <a href="index.php?action=listPosts">HOMEPAGE</a>
 </section>
 
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean();?>
 
-<?php require('adminTemplate.php'); ?>
+<?php require 'adminTemplate.php';?>
