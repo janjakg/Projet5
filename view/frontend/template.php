@@ -79,10 +79,9 @@
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
   <script src="public/js/track.js"></script>
-  <script src="public/js/player.js"></script>
-  <script src="public/js/intro.js"></script>
+  <script src="public/js/player.js"></script>  
   <script src="public/js/animation.js"></script>
-  <script src="public/js/pagination.js"></script>
+
 
 </body>
 
